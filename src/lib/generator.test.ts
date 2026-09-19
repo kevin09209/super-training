@@ -29,6 +29,13 @@ describe('動作庫', () => {
       expect(EXERCISES.some((e) => e.primary === g && e.tier === 1)).toBe(true);
     }
   });
+
+  it('每個動作都有具體的要點提示', () => {
+    for (const e of EXERCISES) {
+      expect(e.tip, `${e.id} 缺少 tip`).toBeTruthy();
+      expect(e.tip!.length, `${e.id} 的 tip 太短`).toBeGreaterThanOrEqual(30);
+    }
+  });
 });
 
 describe('1RM 計算', () => {

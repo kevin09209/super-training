@@ -146,6 +146,12 @@ export function WorkoutSession() {
                   休息 {restFor(ei)}s
                 </button>
               </div>
+              {ex.tip && (
+                <details className="tip" style={{ marginBottom: 6 }}>
+                  <summary style={{ cursor: 'pointer' }}>動作要點</summary>
+                  <div style={{ marginTop: 4 }}>{ex.tip}</div>
+                </details>
+              )}
               <div className="sets">
                 <div className="set-row head">
                   <span>組</span>
